@@ -5,3 +5,9 @@ Welcome to the merchant's guide to the galaxy
     <li> <%= f.numeral %> is <%= f.value %> </li>
   <% end %>
 </ul>
+
+<%= link_to "Create new alien numeral", new_alien_numeral_path %>
+<% @alien_numerals.each do |f| %>
+    <br>
+This is an alien numeral, my name is <%= f.alien %> and my value is <%= f.value %>
+<% end %>

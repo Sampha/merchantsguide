@@ -1,0 +1,2 @@
+class AlienNumeral < ApplicationRecord
+end

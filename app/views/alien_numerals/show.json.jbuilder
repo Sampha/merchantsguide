@@ -1,0 +1,1 @@
+json.partial! "alien_numerals/alien_numeral", alien_numeral: @alien_numeral

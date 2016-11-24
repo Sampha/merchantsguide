@@ -1,0 +1,28 @@
+<%= form_for(alien_numeral) do |f| %>
+  <% if alien_numeral.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(alien_numeral.errors.count, "error") %> prohibited this alien_numeral from being saved:</h2>
+
+      <ul>
+      <% alien_numeral.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :alien %>
+    <%= f.text_field :alien %>
+  </div>
+  is
+  <div class="field">
+    <%= f.label :value %>
+    <% options = options_from_collection_for_select(@roman_numerals, 'value', 'numeral') %>
+    <%= f.select :value, options %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

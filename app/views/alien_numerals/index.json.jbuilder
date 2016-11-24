@@ -1,0 +1,1 @@
+json.array! @alien_numerals, partial: 'alien_numerals/alien_numeral', as: :alien_numeral

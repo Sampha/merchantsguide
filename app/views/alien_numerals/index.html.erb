@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alien Numerals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Alien</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alien_numerals.each do |alien_numeral| %>
+      <tr>
+        <td><%= alien_numeral.alien %></td>
+        <td><%= alien_numeral.value %></td>
+        <td><%= link_to 'Show', alien_numeral %></td>
+        <td><%= link_to 'Edit', edit_alien_numeral_path(alien_numeral) %></td>
+        <td><%= link_to 'Destroy', alien_numeral, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alien Numeral', new_alien_numeral_path %>

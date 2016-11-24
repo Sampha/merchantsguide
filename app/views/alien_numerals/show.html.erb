@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Alien:</strong>
+  <%= @alien_numeral.alien %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @alien_numeral.value %>
+</p>
+
+<%= link_to 'Edit', edit_alien_numeral_path(@alien_numeral) %> |
+<%= link_to 'Back', alien_numerals_path %>

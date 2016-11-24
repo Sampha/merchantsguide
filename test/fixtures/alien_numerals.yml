@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alien: MyString
+  value: 1
+
+two:
+  alien: MyString
+  value: 1
