@@ -1,0 +1,2 @@
+json.extract! mineral_calculation, :id, :alien_one, :alien_one_name, :alien_two, :alien_two_name, :mineral, :mineral_name, :total_value, :created_at, :updated_at
+json.url mineral_calculation_url(mineral_calculation, format: :json)

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value_one: 1
+  value_two: 1
+  value_three: 1
+  value_four: 1
+  value_one_name: MyString
+  value_two_name: MyString
+  value_three_name: MyString
+  value_four_name: MyString
+
+two:
+  value_one: 1
+  value_two: 1
+  value_three: 1
+  value_four: 1
+  value_one_name: MyString
+  value_two_name: MyString
+  value_three_name: MyString
+  value_four_name: MyString

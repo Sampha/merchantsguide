@@ -1,0 +1,22 @@
+<%= form_for(mineral_calculation) do |f| %>
+  <% if mineral_calculation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mineral_calculation.errors.count, "error") %> prohibited this mineral_calculation from being saved:</h2>
+
+      <ul>
+      <% mineral_calculation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <% alienoptions = options_from_collection_for_select(@alien_numerals, 'alien', 'alien') %>
+    <% mineraloptions = options_from_collection_for_select(@minerals, 'name', 'name') %>
+
+    How many Credits is
+    <%= f.select :alien_one_name, alienoptions %> <%= f.select :alien_two_name, alienoptions %> <%= f.select :mineral_name, mineraloptions %>
+    ?
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

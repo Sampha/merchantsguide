@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Alien one:</strong>
+  <%= @mineral_calculation.alien_one %>
+</p>
+
+<p>
+  <strong>Alien one name:</strong>
+  <%= @mineral_calculation.alien_one_name %>
+</p>
+
+<p>
+  <strong>Alien two:</strong>
+  <%= @mineral_calculation.alien_two %>
+</p>
+
+<p>
+  <strong>Alien two name:</strong>
+  <%= @mineral_calculation.alien_two_name %>
+</p>
+
+<p>
+  <strong>Mineral:</strong>
+  <%= @mineral_calculation.mineral %>
+</p>
+
+<p>
+  <strong>Mineral name:</strong>
+  <%= @mineral_calculation.mineral_name %>
+</p>
+
+<p>
+  <strong>Total value:</strong>
+  <%= @mineral_calculation.total_value %>
+</p>
+
+<%= link_to 'Edit', edit_mineral_calculation_path(@mineral_calculation) %> |
+<%= link_to 'Back', mineral_calculations_path %>

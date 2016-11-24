@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :mineral_calculations
+  resources :calculations
   resources :minerals
   resources :alien_numerals
   resources :roman_numerals

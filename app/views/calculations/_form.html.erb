@@ -1,0 +1,22 @@
+<%= form_for(calculation) do |f| %>
+  <% if calculation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(calculation.errors.count, "error") %> prohibited this calculation from being saved:</h2>
+
+      <ul>
+      <% calculation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <% options = options_from_collection_for_select(@alien_numerals, 'alien', 'alien') %>
+    How much is
+    <%= f.select :value_one_name, options %> <%= f.select :value_two_name, options %> <%= f.select :value_three_name, options %> <%= f.select :value_four_name, options %>
+    ?
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

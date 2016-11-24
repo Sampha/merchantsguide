@@ -1,0 +1,2 @@
+json.extract! calculation, :id, :value_one, :value_two, :value_three, :value_four, :value_one_name, :value_two_name, :value_three_name, :value_four_name, :created_at, :updated_at
+json.url calculation_url(calculation, format: :json)

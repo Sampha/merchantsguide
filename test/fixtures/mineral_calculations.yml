@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alien_one: 1
+  alien_one_name: MyString
+  alien_two: 1
+  alien_two_name: MyString
+  mineral: 1
+  mineral_name: MyString
+  total_value: 1
+
+two:
+  alien_one: 1
+  alien_one_name: MyString
+  alien_two: 1
+  alien_two_name: MyString
+  mineral: 1
+  mineral_name: MyString
+  total_value: 1

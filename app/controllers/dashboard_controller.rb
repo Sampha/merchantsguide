@@ -4,6 +4,9 @@ class DashboardController < ApplicationController
     @romannumerals = RomanNumeral.all
     @alien_numerals = AlienNumeral.all
     @minerals = Mineral.all
+    @calculatons = Calculation.all
+    @mineral_calculations = MineralCalculation.all
+
   end
 
 

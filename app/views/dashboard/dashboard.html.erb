@@ -1,10 +1,6 @@
 Welcome to the merchant's guide to the galaxy
-
-<ul>
-  <%  @romannumerals.each do |f| %>
-    <li> <%= f.numeral %> is <%= f.value %> </li>
-  <% end %>
-</ul>
+<br>
+<br>
 
 <%= link_to "Create new alien numeral", new_alien_numeral_path %>
 <% @alien_numerals.each do |f| %>
@@ -14,17 +10,105 @@ This is an alien numeral, my name is <%= f.alien %> and my value is <%= f.value 
 
 <br>
 <br>
+<%= link_to "Calculate a combination of alien currency", new_calculation_path %>
+<% @calculatons.each do |f| %>
+    <br>
+    <%= f.value_one_name %> <%= f.value_two_name %> <%= f.value_three_name %> <%= f.value_four_name %>
+    is
 
+
+    <% @alien_numerals.each do |g| %>
+        <% if g.alien == f.value_one_name %>
+            <% f.value_one = g.value %>
+        <% end %>
+        <% if g.alien == f.value_two_name %>
+            <% f.value_two = g.value %>
+        <% end %>
+        <% if g.alien == f.value_three_name %>
+            <% f.value_three = g.value %>
+        <% end %>
+        <% if g.alien == f.value_four_name %>
+            <% f.value_four = g.value %>
+        <% end %>
+    <% end %>
+
+    <% if f.value_one >= f.value_two  %>
+        <% sum_one = (f.value_one + f.value_two) %>
+    <% else %>
+        <% sum_one = (f.value_two - f.value_one) %>
+    <% end %>
+    <% if f.value_three >= f.value_four  %>
+        <% sum_two = (f.value_three + f.value_four) %>
+    <% else %>
+        <% sum_two = (f.value_four - f.value_three) %>
+    <% end %>
+
+
+    <% if sum_one >= sum_two %>
+        <%= sum_one + sum_two %>
+    <% else %>
+        <%= sum_one - sum_two %>
+    <% end %>
+
+<% end %>
+<br>
+<br>
 <%= link_to "Determine the price of one of my minerals", new_mineral_path %>
 <% @minerals.each do |f| %>
     <br>
     <%= f.name %>  is
     <% if f.alien_value_one >= f.alien_value_two %>
-    <%= f.total / (f.alien_value_one + f.alien_value_two) %>
+    <% f.sum = f.total / (f.alien_value_one + f.alien_value_two) %>
+        <%= f.sum %>
     <% else %>
-    <%= f.total / (f.alien_value_two - f.alien_value_one) %>
+    <% f.sum = f.total / (f.alien_value_two - f.alien_value_one) %>
+        <%= f.sum %>
     <% end %>
     credits
 <% end %>
+<br>
+<br>
+<%= link_to "How much is my cargo worth?", new_mineral_calculation_path %>
+<% @mineral_calculations.each do |f| %>
+    <br>
+    <%= f.alien_one_name %> <%= f.alien_two_name %> <%= f.mineral_name %> is
 
+    <% @alien_numerals.each do |g| %>
+        <% if g.alien == f.alien_one_name %>
+            <% f.alien_one = g.value %>
+        <% end %>
+        <% if g.alien == f.alien_two_name %>
+            <% f.alien_two = g.value %>
+        <% end %>
+    <% end %>
+    <% @minerals.each do |g| %>
+        <% if g.name == f.mineral_name %>
+            <% f.mineral = g.sum %>
+        <% end %>
+    <% end %>
+    <% if f.alien_one >= f.alien_two  %>
+        <% mineral_sum = (f.alien_one + f.alien_two) %>
+    <% else %>
+        <% mineral_sum = (f.alien_two - f.alien_one) %>
+    <% end %>
+    <%= mineral_sum * f.mineral %>
 
+<% end %>
+
+<hr>
+  How to use this guide.
+  <br>
+  <br>
+  To set the value of an alien numeral, i.e. "glob is I", click the "Create a new alien numeral" link and follow the instructions.
+  <br>
+  Once the form is complete your numeral will be displayed beneath the link alongside it's value.
+  <br>
+  <br>
+  To check the result of a combination of alien numerals that you have set, i.e. "how much is pish tegj glob glob ?", click the "Calculate a combination of alien numerals" link and follow the instructions.
+  <br>
+  Once the form is complete, your calculation will be displayed beneath the link.
+  <br>
+  <br>
+  To determine the price of a mineral from an existing equation, i.e. "glob glob Silver is 34 Credits", click the "Determine the price of one of my minerals link and follow instructions.
+  <br>
+  Once the form is complete, the value of your mineral will be displayed underneath the link.

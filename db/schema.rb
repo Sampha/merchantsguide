@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124111602) do
+ActiveRecord::Schema.define(version: 20161124133744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,31 @@ ActiveRecord::Schema.define(version: 20161124111602) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "calculations", force: :cascade do |t|
+    t.integer  "value_one"
+    t.integer  "value_two"
+    t.integer  "value_three"
+    t.integer  "value_four"
+    t.string   "value_one_name"
+    t.string   "value_two_name"
+    t.string   "value_three_name"
+    t.string   "value_four_name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "mineral_calculations", force: :cascade do |t|
+    t.integer  "alien_one"
+    t.string   "alien_one_name"
+    t.integer  "alien_two"
+    t.string   "alien_two_name"
+    t.integer  "mineral"
+    t.string   "mineral_name"
+    t.integer  "total_value"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "minerals", force: :cascade do |t|
     t.string   "name"
     t.integer  "value"
@@ -30,6 +55,7 @@ ActiveRecord::Schema.define(version: 20161124111602) do
     t.integer  "total"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "sum"
   end
 
   create_table "roman_numerals", force: :cascade do |t|
