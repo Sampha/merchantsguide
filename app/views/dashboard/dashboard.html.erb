@@ -11,3 +11,20 @@ Welcome to the merchant's guide to the galaxy
     <br>
 This is an alien numeral, my name is <%= f.alien %> and my value is <%= f.value %>
 <% end %>
+
+<br>
+<br>
+
+<%= link_to "Determine the price of one of my minerals", new_mineral_path %>
+<% @minerals.each do |f| %>
+    <br>
+    <%= f.name %>  is
+    <% if f.alien_value_one >= f.alien_value_two %>
+    <%= f.total / (f.alien_value_one + f.alien_value_two) %>
+    <% else %>
+    <%= f.total / (f.alien_value_two - f.alien_value_one) %>
+    <% end %>
+    credits
+<% end %>
+
+

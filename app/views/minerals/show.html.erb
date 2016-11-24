@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mineral.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @mineral.value %>
+</p>
+
+<p>
+  <strong>Alien value one:</strong>
+  <%= @mineral.alien_value_one %>
+</p>
+
+<p>
+  <strong>Alien value two:</strong>
+  <%= @mineral.alien_value_two %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @mineral.total %>
+</p>
+
+<%= link_to 'Edit', edit_mineral_path(@mineral) %> |
+<%= link_to 'Back', minerals_path %>

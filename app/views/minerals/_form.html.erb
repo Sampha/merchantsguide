@@ -1,0 +1,23 @@
+<%= form_for(mineral) do |f| %>
+    <% if mineral.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(mineral.errors.count, "error") %> prohibited this mineral from being saved:</h2>
+
+          <ul>
+            <% mineral.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <% options = options_from_collection_for_select(@alien_numerals, 'value', 'alien') %>
+    <%= f.select :alien_value_one, options %> <%= f.select :alien_value_two, options %>
+      <%= f.text_field :name, placeholder: "name of mineral" %>
+      is
+      <%= f.number_field :total, placeholder: "total" %>
+      credits
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Minerals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Alien value one</th>
+      <th>Alien value two</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @minerals.each do |mineral| %>
+      <tr>
+        <td><%= mineral.name %></td>
+        <td><%= mineral.value %></td>
+        <td><%= mineral.alien_value_one %></td>
+        <td><%= mineral.alien_value_two %></td>
+        <td><%= mineral.total %></td>
+        <td><%= link_to 'Show', mineral %></td>
+        <td><%= link_to 'Edit', edit_mineral_path(mineral) %></td>
+        <td><%= link_to 'Destroy', mineral, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mineral', new_mineral_path %>

@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
   def dashboard
     @romannumerals = RomanNumeral.all
     @alien_numerals = AlienNumeral.all
+    @minerals = Mineral.all
   end
 
 
