@@ -29,7 +29,7 @@ class MineralsController < ApplicationController
 
     respond_to do |format|
       if @mineral.save
-        format.html { redirect_to @mineral, notice: 'Mineral was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Mineral was successfully created.' }
         format.json { render :show, status: :created, location: @mineral }
       else
         format.html { render :new }
