@@ -1,0 +1,1 @@
+json.array! @roman_numerals, partial: 'roman_numerals/roman_numeral', as: :roman_numeral

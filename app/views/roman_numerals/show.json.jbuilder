@@ -1,0 +1,1 @@
+json.partial! "roman_numerals/roman_numeral", roman_numeral: @roman_numeral
